@@ -1,5 +1,6 @@
 package org.formation.service;
 
+import org.formation.dto.CoffeeCreateDto;
 import org.formation.dto.CoffeeDto;
 import org.formation.entity.Coffee;
 
@@ -10,7 +11,7 @@ public interface CoffeeService {
 
     List<CoffeeDto> allCoffees();
     Optional<CoffeeDto> oneCoffee(Long id);
-    CoffeeDto create(CoffeeDto coffeeDto); ///warning
+    CoffeeDto create(CoffeeCreateDto coffeeDto); ///warning
     /// update
 
 

@@ -3,6 +3,7 @@ package org.formation.service;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.formation.dto.CoffeeCreateDto;
 import org.formation.dto.CoffeeDto;
 import org.formation.entity.Coffee;
 import org.formation.mapper.CoffeeMapper;
@@ -41,8 +42,11 @@ public class CoffeeServiceImpl implements CoffeeService {
     }
 
     @Override
-    public CoffeeDto create(CoffeeDto coffeeDto) {
-        return null;
+    public CoffeeDto create(CoffeeCreateDto dto) {
+        Coffee entity = mapper.toEntity(dto);
+        Coffee saved = repository.save(entity);
+        return mapper.toDto(saved);
     }
+
 
 }
