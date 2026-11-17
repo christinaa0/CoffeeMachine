@@ -1,6 +1,6 @@
 # CoffeeMachine
 
-Travaux pratiques réalisés en cours sous l'encadrement du professeur à l'EPITA. Ce projet est un exemple d'application web développée avec **Spring Boot**, **Spring Data JPA** et une base de données embarquée **H2**.
+Travaux pratiques réalisés en cours sous l'encadrement d'un professeur à l'EPITA. Ce projet est un exemple d'application web développée avec **Spring Boot**, **Spring Data JPA** et une base de données embarquée **H2**.
 
 ## Stack technique
 
@@ -20,5 +20,5 @@ Travaux pratiques réalisés en cours sous l'encadrement du professeur à l'EPIT
 
 1. Cloner le dépôt :
    ```bash
-   git clone [https://github.com/christinaa0/CoffeMachine.git](https://github.com/christinaa0/CoffeMachine.git)
+   git clone [https://github.com/christinaa0/CoffeeMachine.git](https://github.com/christinaa0/CoffeeMachine.git)
    cd CoffeMachine
