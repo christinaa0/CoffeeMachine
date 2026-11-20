@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.formation.dto.CoffeeCreateDto;
 import org.formation.dto.CoffeeDto;
+import org.formation.dto.CoffeeUpdateDto;
 import org.formation.entity.Coffee;
 import org.formation.service.CoffeeService;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,14 @@ public class CoffeeController {
     @GetMapping("{id}")
     ResponseEntity<CoffeeDto> coffee(@PathVariable Long id){
         return service.oneCoffee(id)
+                .map(ResponseEntity :: ok)
+                .orElse(ResponseEntity.notFound().build());
+
+    }
+
+    @PatchMapping("{id}")
+    ResponseEntity<CoffeeDto> update(@PathVariable Long id, @RequestBody @Valid CoffeeUpdateDto dto){
+        return service.update(id, dto)
                 .map(ResponseEntity :: ok)
                 .orElse(ResponseEntity.notFound().build());
 

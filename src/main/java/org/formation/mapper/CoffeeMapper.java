@@ -2,10 +2,9 @@ package org.formation.mapper;
 
 import org.formation.dto.CoffeeCreateDto;
 import org.formation.dto.CoffeeDto;
+import org.formation.dto.CoffeeUpdateDto;
 import org.formation.entity.Coffee;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface CoffeeMapper {
@@ -15,4 +14,8 @@ public interface CoffeeMapper {
     @Mapping(target = "id", ignore = true)
     Coffee toEntity(CoffeeCreateDto dto);
 
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "id", ignore = true)
+    void updateEntity(@MappingTarget Coffee entity , CoffeeUpdateDto dto);
 }
